@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  /* padding: 20px; */
+}
+/* Top Nav Design */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #1e5631;
+  color: white;
+}
+.section{
+  padding: 10px;
+}
+.top-nav img {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.info-text {
+  color: white;
+  font-size: 12px;
+}
+
+.top-nav-mid {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.contact, .language, .buttons {
+  margin: 5px 0;
+}
+
+.main-header {
+  background-color: #2d6a4f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+/* Headings */
+h2, h3, h4 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+h2, h3, h4 {
+  border-bottom: 2px solid green;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* List Styling */
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+ul span {
+  font-weight: bold;
+  color: #16a085;
+}
+
+.safety-list {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.safety-list li {
+  margin-bottom: 10px;
+}
+
+/* Section & Paragraph Styling */
+.section {
+  margin-bottom: 20px;
+}
+
+.summary {
+  font-weight: bold;
+  color: #e74c3c;
+  font-size: 18px;
+}
+
+/* Emoji Styling */
+.emoji {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Special Styling for Formatted Sections */
+.headingLine {
+  border-bottom: 3px solid green;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  font-size: 18px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+/* For Buttons (if needed in the future) */
+button {
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #04de6f;
+}
+
+/* Form Inputs (if you add forms in future) */
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #04de5f;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #2ecc71;
+}
+footer {
+  background-color: #2e7d32; /* Dark Green */
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-content h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.footer-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-via-social a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #4caf50;
+  padding: 12px 14px;
+  margin: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 20px;
+  transition: 0.4s;
+}
+
+.contact-via-social a:hover {
+  background-color: #1b5e20;
+  transform: scale(1.2);
+  color: #fff;
+}
+
+.footer-credit {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}

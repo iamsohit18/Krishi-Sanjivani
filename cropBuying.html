@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Farmer Crop Listing</title>
+  <link rel="stylesheet" href="cropBuying.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="langData.css">
+</head>
+<body>
+  <header>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+
+      <div class="First">
+        <img src="KisanSanjivni.jpg" alt="KisanSanjivni">
+        <pre class="info-text">"One Platform — Multiple Services for Farmers"
+"Empowering Rural India through Digital Agriculture Innovation"
+"Bridging the Gap between Farmers and Technology"
+"Modern Farming Needs Modern Solutions — That’s Krishi Sanjivni"
+        </pre>
+      </div>
+
+      <div class="top-nav-mid" id="tagline">
+        <h1 id="heading-1">Crop Buying Details</h1><div class="search-container">
+          <input type="text" id="cropSearch" placeholder="Search by crop...">
+          <input type="text" id="locationSearch" placeholder="Search by location...">
+        </div>
+        </div>
+      <div class="top-nav-right">
+        <div class="contact" id="contactText">
+          📞 Call us: 1800 222 3331
+        </div>
+        <div class="language"id="google_translate_element"> </div>
+<div class="buttons">
+<button class="btn_register">Register</button>
+<button class="btn_login">Login</button></div></div> </div>
+</header>
+  <table id="farmerTable">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Farmer Name</th>
+        <th>Crop</th>
+        <th>Quantity (Qtl)</th>
+        <th>Location</th>
+        <th>Client (Aadathi)</th>
+        <th>Contact</th>
+        <th>Connect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Add your rows here (Example shown below) -->
+      <tr>
+        <td>1</td>
+        <td>Sohan Singh</td>
+        <td>Rice</td>
+        <td>40</td>
+        <td>Kharkhauda, Meerut</td>
+        <td>Krishna Traders</td>
+        <td>+91-9876543210</td>
+        <td>
+          <button class="btn call">Call</button>
+          <button class="btn chat">Chat</button>
+          <button class="btn broker">Broker</button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Ramesh Kumar</td>
+        <td>Wheat</td>
+        <td>50</td>
+        <td>Dhanaura, Hapur</td>
+        <td>Shyam Traders</td>
+        <td>+91-9876543210</td>
+        <td>
+          <button class="btn call">Call</button>
+          <button class="btn chat">Chat</button>
+          <button class="btn broker">Broker</button>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Vikram Yadav</td>
+        <td>Wheat</td>
+        <td>55</td>
+        <td>Joya, Amroha</td>
+        <td>Mohan Agro Pvt. Ltd.</td>
+        <td>+91-9988771122</td>
+        <td>
+          <button class="btn call">Call</button>
+          <button class="btn chat">Chat</button>
+          <button class="btn broker">Broker</button>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Ramveer Tomar</td>
+        <td>Sugarcane</td>
+        <td>90</td>
+        <td>Kithore, Meerut</td>
+        <td>Shree Ram Traders</td>
+        <td>+91-9998877665</td>
+        <td>
+          <button class="btn call">Call</button>
+          <button class="btn chat">Chat</button>
+          <button class="btn broker">Broker</button>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Manoj Bhati</td>
+        <td>Bajra</td>
+        <td>28</td>
+        <td>Jarcha, Noida</td>
+        <td>Rudra Grains</td>
+        <td>+91-9087654321</td>
+        <td>
+          <button class="btn call">Call</button>
+          <button class="btn chat">Chat</button>
+          <button class="btn broker">Broker</button>
+        </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Naresh Pal</td>
+        <td>Barley</td>
+        <td>35</td>
+        <td>Shikarpur, Bulandshahr</td>
+        <td>Amrit Traders</td>
+        <td>+91-9123456780</td>
+        <td>
+          <button class="btn call">Call</button>
+          <button class="btn chat">Chat</button>
+          <button class="btn broker">Broker</button>
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Lakhan Singh</td>
+        <td>Mustard</td>
+        <td>22</td>
+        <td>Chandausi, Sambhal</td>
+        <td>Divya Food Products</td>
+        <td>+91-9988001122</td>
+        <td>
+          <button class="btn call">Call</button>
+          <button class="btn chat">Chat</button>
+          <button class="btn broker">Broker</button>
+        </td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Suresh Rana</td>
+        <td>Maize</td>
+        <td>60</td>
+        <td>Gulaothi, Bulandshahr</td>
+        <td>Triveni Brokers</td>
+        <td>+91-9012345678</td>
+        <td>
+          <button class="btn call">Call</button>
+          <button class="btn chat">Chat</button>
+          <button class="btn broker">Broker</button>
+        </td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Rajesh Chauhan</td>
+        <td>Paddy</td>
+        <td>48</td>
+        <td>Dadri, Gautam Budh Nagar</td>
+        <td>Bhagwati Grains</td>
+        <td>+91-9023456789</td>
+        <td>
+          <button class="btn call">Call</button>
+          <button class="btn chat">Chat</button>
+          <button class="btn broker">Broker</button>
+        </td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Deepak Maurya</td>
+        <td>Chana</td>
+        <td>33</td>
+        <td>Khurja, Bulandshahr</td>
+        <td>Saraswati Agro</td>
+        <td>+91-9098765432</td>
+        <td>
+          <button class="btn call">Call</button>
+          <button class="btn chat">Chat</button>
+          <button class="btn broker">Broker</button>
+        </td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Ravindra Singh</td>
+        <td>Masoor</td>
+        <td>45</td>
+        <td>Ghosi, Mau</td>
+        <td>Vikas Aadathi</td>
+        <td>+91-9001122334</td>
+        <td>
+          <button class="btn call">Call</button>
+          <button class="btn chat">Chat</button>
+          <button class="btn broker">Broker</button>
+        </td>
+      </tr>
+      <!-- Add more rows here -->
+    </tbody>
+  </table>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <h3>KisanSanjivni</h3>
+        <p>Empowering Farmers with Smart Agriculture Solutions & Digital Services.</p>
+  
+        <div class="contact-via-social">
+          <a href="https://wa.me/your_number" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://twitter.com/your_profile" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://facebook.com/your_profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://linkedin.com/in/your_profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://instagram.com/your_profile" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+  
+        <p class="footer-credit">© 2025 KisanSanjivni | Designed by Sohit Kumar Sharma</p>
+      </div>
+    </div>
+  </footer>
+  <script src="langData.js"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    const cropInput = document.getElementById("cropSearch");
+    const locationInput = document.getElementById("locationSearch");
+    const table = document.getElementById("farmerTable").getElementsByTagName("tbody")[0];
+
+    function filterTable() {
+      const cropFilter = cropInput.value.toLowerCase();
+      const locationFilter = locationInput.value.toLowerCase();
+
+      Array.from(table.rows).forEach(row => {
+        const crop = row.cells[2].textContent.toLowerCase();
+        const location = row.cells[4].textContent.toLowerCase();
+        row.style.display = (crop.includes(cropFilter) && location.includes(locationFilter)) ? "" : "none";
+      });
+    }
+
+    cropInput.addEventListener("keyup", filterTable);
+    locationInput.addEventListener("keyup", filterTable);
+  </script>
+
+</body>
+</html>

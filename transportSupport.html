@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KrishiSanjivni Transport Support</title>
+<link rel="stylesheet" href="transportSupport.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="langData.css">
+</head>
+<body>
+  <header>
+  <!-- Top Navigation -->
+  <div class="top-nav">
+
+    <div class="First">
+      <img src="KisanSanjivni.jpg" alt="KisanSanjivni">
+      <pre class="info-text">"One Platform — Multiple Services for Farmers"
+"Empowering Rural India through Digital Agriculture Innovation"
+"Bridging the Gap between Farmers and Technology"
+"Modern Farming Needs Modern Solutions — That’s Krishi Sanjivni"
+      </pre>
+    </div>
+
+    <div class="top-nav-mid" id="tagline">
+      "Developed India, Prosperous Farmers"
+    </div>
+
+    <div class="top-nav-right">
+      <div class="contact" id="contactText">
+        📞 Call us: 1800 222 3331
+      </div>
+      <div class="language" id="google_translate_element"> </div>
+<div class="buttons">
+        <button class="btn register">Register</button>
+        <button type="submit">Book Transport</button>
+      </div>
+    </div>
+
+  </div>
+</header>
+<div class="container">
+  <h2>KrishiSanjivni Transport Support</h2>
+  <p>Get Vehicle from Field to Home/Market or Home to Market on a Single Call</p>
+
+  <form id="transportForm">
+    <div class="form-group">
+      <label>Farmer Name</label>
+      <input type="text" id="farmerName" placeholder="Enter Your Name" required>
+    </div>
+
+    <div class="form-group">
+      <label>Mobile Number</label>
+      <input type="number" id="mobileNumber" placeholder="Enter Mobile Number" required>
+    </div>
+
+    <div class="form-group">
+      <label>Pickup Location</label>
+      <input type="text" id="pickupLocation" placeholder="Enter Pickup Location" required>
+    </div>
+
+    <div class="form-group">
+      <label>Drop Location</label>
+      <input type="text" id="dropLocation" placeholder="Enter Drop Location" required>
+    </div>
+
+    <div class="form-group">
+      <label>Crop Details</label>
+      <input type="text" id="cropDetails" placeholder="Enter Crop Details" required>
+    </div>
+
+    <div class="form-group">
+      <label>Pickup Date & Time</label>
+      <input type="datetime-local" id="pickupDateTime" required>
+    </div>
+
+    <div class="form-group">
+      <label>Transport Type</label>
+      <select id="transportType" required>
+        <option value="">-- Select Vehicle Type --</option>
+        <option value="Tractor">Tractor</option>
+        <option value="Pickup">Pickup</option>
+        <option value="Mini Truck">Mini Truck</option>
+      </select>
+    </div>
+  </form>
+
+  <div class="contact-info">
+    <h3>For Instant Booking</h3>
+    <p>Helpline: <a href="tel:+917830239791">+91-7830239791</a></p>
+    <p>WhatsApp: <a href="https://wa.me/+917830239791" target="_blank">Chat Now</a></p>
+  </div>
+</div>
+<footer>
+  <div class="footer-container">
+    <div class="footer-content">
+      <h3>KisanSanjivni</h3>
+      <p>Empowering Farmers with Smart Agriculture Solutions & Digital Services.</p>
+
+      <div class="contact-via-social">
+        <a href="https://wa.me/your_number" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://twitter.com/your_profile" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/your_profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://linkedin.com/in/your_profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com/your_profile" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <p class="footer-credit">© 2025 KisanSanjivni | Designed by Sohit Kumar Sharma</p>
+    </div>
+  </div>
+</footer>   
+<script src="langData.js"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+document.getElementById('transportForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('farmerName').value;
+  alert('Thank you ' + name + '! Your transport booking is successfully received. We will contact you soon.');
+  document.getElementById('transportForm').reset();
+});
+</script>
+
+</body>
+</html>

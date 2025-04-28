@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crop Fertilizer Guide</title>
+  <link rel="stylesheet" href="seedsAndFertilizer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"><link rel="stylesheet" href="langData.css">
+</head>
+<body>
+  <header>
+  <!-- Top Navigation -->
+  <div class="top-nav">
+    <div class="First">
+      <img src="KisanSanjivni.jpg" alt="KisanSanjivni">
+      <pre class="info-text">
+"One Platform — Multiple Services for Farmers"
+"Empowering Rural India through Digital Agriculture Innovation"
+"Bridging the Gap between Farmers and Technology"
+"Modern Farming Needs Modern Solutions — That’s Krishi Sanjivni"
+      </pre>
+    </div>
+
+    <div class="top-nav-mid" id="tagline">
+      <h1 id="heading-1">Seeds & Fertilizer Details</h1>
+      <div class="search-bar">
+        <input type="text" id="searchBar" placeholder="Search by crop or fertilizer name..." onkeyup="filterCrops()">
+      </div>
+    </div>
+
+    <div class="top-nav-right">
+      <div class="contact" id="contactText">
+        📞 Call us: 1800 222 3331
+      </div>
+      <div class="language" id="google_translate_element"></div>
+      <div class="buttons">
+        <button class="btn_register">Register</button>
+        <button class="btn_login">Login</button>
+        <button class="btn_register" id="cart_button">Cart</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Add customer panel here, initially hidden -->
+<div id="customerPanel" style="display: none;">
+  <h2>Fertilizer and Seed Order</h2>
+
+  <div class="form-container">
+    <h3>Select Your Fertilizer/Seed</h3>
+
+    <!-- Seed Dropdown -->
+    <div class="form-group">
+      <label for="itemSelect">Select Seed (Optional):</label>
+      <select id="itemSelect">
+        <option value="">Select Seed</option>
+        <option value="Wheat Seed">Wheat Seed</option>
+        <option value="Rice Seed">Rice Seed</option>
+        <option value="Cotton Seed">Cotton Seed</option>
+        <option value="Tomato Seed">Tomato Seed</option>
+      </select>
+    </div>
+
+    <!-- Seed Quantity Input -->
+    <div class="form-group">
+      <label for="seedQuantity">Enter Quantity (kg):</label>
+      <input type="number" id="seedQuantity" min="1" placeholder="Enter seed quantity">
+    </div>
+
+    <!-- Fertilizer Dropdown -->
+    <div class="form-group">
+      <label for="fertilizerSelect">Select Fertilizer (Optional):</label>
+      <select id="fertilizerSelect" disabled>
+        <option value="">Select Fertilizer</option>
+      </select>
+    </div>
+
+    <!-- Fertilizer Quantity Input -->
+    <div class="form-group">
+      <label for="fertilizerQuantity">Enter Quantity (kg):</label>
+      <input type="number" id="fertilizerQuantity" min="1" placeholder="Enter fertilizer quantity">
+    </div>
+
+    <button onclick="submitForm()">Submit</button>
+  </div>
+
+  <div class="order-summary" id="orderSummary">
+    <h3>Order Summary</h3>
+    <p><strong>Seed:</strong> No seed selected</p>
+    <p><strong>Seed Quantity:</strong> 0 kg</p>
+    <p><strong>Fertilizer:</strong> No fertilizer selected</p>
+    <p><strong>Fertilizer Quantity:</strong> 0 kg</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Cotton</h3>
+  <p><strong>Quality Seeds:</strong> Bt Cotton, H-777, RCH 134</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 60 kg, DAP - 40 kg, Potash - 25 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Split into 3 applications – early growth, squaring, flowering stages.</p>
+    <p><strong>DAP:</strong> Basal application boosts root and early vegetative growth.</p>
+    <p><strong>Potash:</strong> Improves boll development and fiber quality.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Wheat</h3>
+  <p><strong>Quality Seeds:</strong> HD 2967, PBW 725, WH 1105</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Zinc Sulphate</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, Zinc Sulphate - 5 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> 3 split doses at sowing, tillering, and heading stage.</p>
+    <p><strong>DAP:</strong> Use during sowing to boost root strength and early growth.</p>
+    <p><strong>Zinc Sulphate:</strong> Prevents deficiency symptoms. Apply as soil treatment or foliar spray.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Rice</h3>
+  <p><strong>Quality Seeds:</strong> MTU 1010, Swarna, IR 64</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, SSP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 60 kg, SSP - 50 kg, Potash - 25 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply 3 times — transplanting, tillering, and panicle initiation.</p>
+    <p><strong>SSP:</strong> Basal dose at transplanting for phosphorus availability.</p>
+    <p><strong>Potash:</strong> Apply in two splits – at tillering and flowering stage.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Maize</h3>
+  <p><strong>Quality Seeds:</strong> Vijay, Ganga-2, DHM-117</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 100 kg, DAP - 60 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in two splits — at sowing and 30 days after sowing.</p>
+    <p><strong>DAP:</strong> Basal application at sowing for better root growth.</p>
+    <strong>Potash:</strong> Helps in the development of ears, kernels, and improves resistance to drought.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Barley</h3>
+  <p><strong>Quality Seeds:</strong> RD 2035, RD 2501, K 507</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 60 kg, MOP - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at sowing and in two split doses during tillering.</p>
+    <p><strong>DAP:</strong> Basal application improves early vegetative growth.</p>
+    <p><strong>MOP:</strong> Helps during tillering for better plant growth.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Soybean</h3>
+  <p><strong>Quality Seeds:</strong> JS 335, JS 9305, PS 1095</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 30 kg, MOP - 15 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in two splits — during sowing and flowering stage.</p>
+    <p><strong>DAP:</strong> Basal application during sowing to boost root growth.</p>
+    <p><strong>MOP:</strong> Apply in the flowering stage for better pod filling.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Sunflower</h3>
+  <p><strong>Quality Seeds:</strong> KBSH-44, KBSH-1, Morden</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, MOP - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in two splits — at sowing and 30 days after sowing.</p>
+    <p><strong>DAP:</strong> Apply at sowing for root development and early growth.</p>
+    <p><strong>MOP:</strong> Helps in seed filling and oil content improvement.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Groundnut (Peanut)</h3>
+  <p><strong>Quality Seeds:</strong> TMV 2, JL 24, GG 20</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 60 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at sowing and 30 days after sowing for better growth.</p>
+    <p><strong>DAP:</strong> Apply as a basal dose to enhance early development.</p>
+    <p><strong>Potash:</strong> Helps in pod development and improves yield.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Potato</h3>
+  <p><strong>Quality Seeds:</strong> Kufri Jyoti, Kufri Badshah, Kufri Pukhraj</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 80 kg, DAP - 100 kg, MOP - 40 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in two splits — at planting and during tuber formation.</p>
+    <p><strong>DAP:</strong> Basal application for better root and tuber development.</p>
+    <p><strong>MOP:</strong> Helps in tuber bulking and improves quality.</p>
+  </div>
+</div>
+<div class="card">
+  <h3>Tomato</h3>
+  <p><strong>Quality Seeds:</strong> T-6, Pusa Ruby, Hybrid 433</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 60 kg, DAP - 40 kg, Potash - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in 3 splits — at planting, at flowering, and fruit setting stages.</p>
+    <p><strong>DAP:</strong> Basal dose at sowing for root development.</p>
+    <p><strong>Potash:</strong> Helps improve fruit quality and yield. Apply during flowering and fruiting stages.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Onion</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Red, N-53, Punjab Naroya</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 60 kg, MOP - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and then as top dressing during vegetative growth.</p>
+    <p><strong>DAP:</strong> Apply at sowing as a basal dose.</p>
+    <p><strong>MOP:</strong> Helps in bulb formation and quality enhancement.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Sugarcane</h3>
+  <p><strong>Quality Seeds:</strong> Co 86032, Co 0238, Co 0138</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, SSP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 80 kg, SSP - 40 kg, MOP - 50 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in 3 splits — during planting, tillering, and elongation stages.</p>
+    <p><strong>SSP:</strong> Basal application for root development and early growth.</p>
+    <p><strong>MOP:</strong> Applied in the elongation phase to promote cane growth.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Mango</h3>
+  <p><strong>Quality Seeds:</strong> Alphonso, Kesar, Langra</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 40 kg, Potash - 50 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in 2 splits — pre-flowering and fruit development stages.</p>
+    <p><strong>DAP:</strong> Basal dose during flowering to promote good fruiting.</p>
+    <p><strong>Potash:</strong> Essential for fruit growth and sugar content development. Apply during fruiting.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Banana</h3>
+  <p><strong>Quality Seeds:</strong> Grand Naine, Red Banana, Poovan</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 90 kg, DAP - 50 kg, Potash - 100 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in 3 splits — during planting, early vegetative growth, and flowering.</p>
+    <p><strong>DAP:</strong> Apply as basal dose for promoting vegetative growth.</p>
+    <p><strong>Potash:</strong> Critical for banana bunch development, applied during flowering and fruit setting.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Apple</h3>
+  <p><strong>Quality Seeds:</strong> Red Delicious, Golden Delicious, Fuji</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during spring growth to enhance vegetative growth.</p>
+    <p><strong>DAP:</strong> Apply at planting to promote root development and early fruiting.</p>
+    <p><strong>Potash:</strong> Helps improve fruit quality and sugar content, apply during flowering.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Grapes</h3>
+  <p><strong>Quality Seeds:</strong> Thompson Seedless, Black Beauty, Keshia</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 60 kg, DAP - 50 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in splits — during bud break and flowering.</p>
+    <p><strong>DAP:</strong> Apply at planting for root development and initial growth.</p>
+    <p><strong>Potash:</strong> Helps in improving fruit color and sugar content, apply during fruit setting and ripening.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Orange</h3>
+  <p><strong>Quality Seeds:</strong> Nagpur, Kinnow, Blood Orange</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 80 kg, DAP - 60 kg, Potash - 60 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at early vegetative growth and again during flowering.</p>
+    <p><strong>DAP:</strong> Basal application during planting.</p>
+    <p><strong>Potash:</strong> Crucial for fruit quality and sugar content, apply during fruit development.</p>
+  </div>
+</div>
+<div class="card">
+  <h3>Pomegranate</h3>
+  <p><strong>Quality Seeds:</strong> Bhagwa, Kandhari, Ganesh</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 30 kg, Potash - 40 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during early growth and fruit setting stages.</p>
+    <p><strong>DAP:</strong> Basal application for root development and early growth.</p>
+    <p><strong>Potash:</strong> Helps in enhancing fruit color and yield. Apply during flowering and fruiting.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Papaya</h3>
+  <p><strong>Quality Seeds:</strong> Red Lady, Sunrise Solo, Pusa Dwarf</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 80 kg, DAP - 40 kg, Potash - 40 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at the time of planting and during the vegetative stage.</p>
+    <p><strong>DAP:</strong> Apply as a basal dose for root development.</p>
+    <p><strong>Potash:</strong> Helps improve fruit quality. Apply during flowering and fruiting stages.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Guava</h3>
+  <p><strong>Quality Seeds:</strong> Allahabad Safeda, Red, Kesar</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 60 kg, DAP - 40 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at planting and in early vegetative growth.</p>
+    <p><strong>DAP:</strong> Basal application during planting for better root development.</p>
+    <p><strong>Potash:</strong> Crucial for fruit development and sugar content. Apply during fruiting stages.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Watermelon</h3>
+  <p><strong>Quality Seeds:</strong> Sugar Baby, Crimson Sweet, Royal Sweet</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 80 kg, DAP - 60 kg, Potash - 50 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and later during the fruiting stage.</p>
+    <p><strong>DAP:</strong> Apply at planting to encourage early growth and root development.</p>
+    <p><strong>Potash:</strong> Helps improve fruit size and sweetness. Apply at fruit setting and growth stages.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Cabbage</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Drumhead, Pride of India, Golden Acre</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 30 kg, MOP - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at planting and as top dressing during the vegetative phase.</p>
+    <p><strong>DAP:</strong> Apply during sowing to promote root development and early growth.</p>
+    <p><strong>MOP:</strong> Helps with head formation and quality. Apply during the growth stage.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Cauliflower</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Snowball, White Snow, Early Snowball</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 30 kg, Potash - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at sowing and as top dressing during the vegetative growth phase.</p>
+    <p><strong>DAP:</strong> Apply as a basal dose during sowing for root development and early growth.</p>
+    <p><strong>Potash:</strong> Helps improve head formation and quality. Apply during the flowering stage.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Peas</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Pragati, Pusa Early, Matar Kesar</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 30 kg, Potash - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and again at the flowering stage.</p>
+    <p><strong>DAP:</strong> Basal dose during sowing for early growth.</p>
+    <p><strong>Potash:</strong> Helps in enhancing pod formation and yield. Apply during the flowering stage.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Carrot</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Kesar, Nantes, Early Scarlet</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 30 kg, DAP - 40 kg, Potash - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during planting and at the vegetative growth stage.</p>
+    <p><strong>DAP:</strong> Apply as a basal dose during sowing for better root development.</p>
+    <p><strong>Potash:</strong> Helps improve root size and quality. Apply during root development.</p>
+  </div>
+</div>
+<div class="card">
+  <h3>Chilli</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Jwala, Guntur, Byadgi</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 30 kg, Potash - 25 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at sowing and top dress during flowering.</p>
+    <p><strong>DAP:</strong> Apply during sowing for root development.</p>
+    <p><strong>Potash:</strong> Helps improve fruit quality and color. Apply during flowering.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Sweet Corn</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Hybrid, Golden, Kiran</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at sowing and again during vegetative growth.</p>
+    <p><strong>DAP:</strong> Apply during sowing for better root development.</p>
+    <p><strong>Potash:</strong> Apply at flowering and during cob development to improve yield.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Avocado</h3>
+  <p><strong>Quality Seeds:</strong> Hass, Pinkerton, Fuerte</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, Potash - 40 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at planting and during vegetative growth stages.</p>
+    <p><strong>DAP:</strong> Apply during sowing for root development.</p>
+    <p><strong>Potash:</strong> Helps improve fruit quality. Apply during flowering and fruiting.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Kiwi</h3>
+  <p><strong>Quality Seeds:</strong> Hayward, Arctic, Baby Kiwi</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 60 kg, DAP - 40 kg, Potash - 50 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during vegetative growth and before flowering.</p>
+    <p><strong>DAP:</strong> Apply during sowing for better root establishment.</p>
+    <p><strong>Potash:</strong> Helps in fruit development and color. Apply during fruiting.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Strawberry</h3>
+  <p><strong>Quality Seeds:</strong> Chandler, Sequoia, Sweet Charlie</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 30 kg, DAP - 20 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during planting and after flowering.</p>
+    <p><strong>DAP:</strong> Apply at planting for better root establishment.</p>
+    <p><strong>Potash:</strong> Enhances fruit size and flavor. Apply during fruiting.</p>
+  </div>
+</div>
+<div class="card">
+  <h3>Cucumber</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Sanyog, Pusa Uday, Green Long</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 30 kg, Potash - 25 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and again during vegetative growth.</p>
+    <p><strong>DAP:</strong> Apply during sowing for root development.</p>
+    <p><strong>Potash:</strong> Apply during flowering and fruiting to improve fruit quality.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Pumpkin</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Vishwas, Pusa Ajeet, Arjuna</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and top-dress during fruit development.</p>
+    <p><strong>DAP:</strong> Apply during sowing for better root growth.</p>
+    <p><strong>Potash:</strong> Helps improve fruit size and yield. Apply during flowering.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Bell Pepper</h3>
+  <p><strong>Quality Seeds:</strong> California Wonder, Pusa Jwala, Pusa Aghani</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 30 kg, Potash - 25 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and top dress during flowering.</p>
+    <p><strong>DAP:</strong> Apply at sowing to encourage root development.</p>
+    <p><strong>Potash:</strong> Apply during flowering to promote better fruit size and color.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Eggplant (Brinjal)</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Purple Long, Pusa Uttam, Arka Nishant</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at sowing and top-dress during flowering and fruiting.</p>
+    <p><strong>DAP:</strong> Apply during sowing for root development and early growth.</p>
+    <p><strong>Potash:</strong> Apply during fruiting to improve fruit quality and size.</p>
+  </div>
+</div>
+<div class="card">
+  <h3>Lettuce</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Subhra, Iceberg, Romaine</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 30 kg, DAP - 25 kg, Potash - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and once more during early growth.</p>
+    <p><strong>DAP:</strong> Apply at sowing for strong root development.</p>
+    <p><strong>Potash:</strong> Apply during the vegetative phase to improve leaf quality and size.</p>
+  </div>
+</div>
+
+<!-- Continue adding similar sections for other crops (Spinach, Bitter Gourd, Ridge Gourd, Bottle Gourd, Beetroot, etc.) -->
+<div class="card">
+  <h3>Chilli</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Jwala, Guntur, Byadgi</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 30 kg, Potash - 25 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at sowing and top dress during flowering.</p>
+    <p><strong>DAP:</strong> Apply during sowing for root development.</p>
+    <p><strong>Potash:</strong> Helps improve fruit quality and color. Apply during flowering.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Sweet Corn</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Hybrid, Golden, Kiran</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at sowing and again during vegetative growth.</p>
+    <p><strong>DAP:</strong> Apply during sowing for better root development.</p>
+    <p><strong>Potash:</strong> Apply at flowering and during cob development to improve yield.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Avocado</h3>
+  <p><strong>Quality Seeds:</strong> Hass, Pinkerton, Fuerte</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, Potash - 40 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at planting and during vegetative growth stages.</p>
+    <p><strong>DAP:</strong> Apply during sowing for root development.</p>
+    <p><strong>Potash:</strong> Helps improve fruit quality. Apply during flowering and fruiting.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Kiwi</h3>
+  <p><strong>Quality Seeds:</strong> Hayward, Arctic, Baby Kiwi</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 60 kg, DAP - 40 kg, Potash - 50 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during vegetative growth and before flowering.</p>
+    <p><strong>DAP:</strong> Apply during sowing for better root establishment.</p>
+    <p><strong>Potash:</strong> Helps in fruit development and color. Apply during fruiting.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Strawberry</h3>
+  <p><strong>Quality Seeds:</strong> Chandler, Sequoia, Sweet Charlie</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 30 kg, DAP - 20 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during planting and after flowering.</p>
+    <p><strong>DAP:</strong> Apply at planting for better root establishment.</p>
+    <p><strong>Potash:</strong> Enhances fruit size and flavor. Apply during fruiting.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Cucumber</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Sanyog, Pusa Uday, Green Long</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 30 kg, Potash - 25 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and again during vegetative growth.</p>
+    <p><strong>DAP:</strong> Apply during sowing for root development.</p>
+    <p><strong>Potash:</strong> Apply during flowering and fruiting to improve fruit quality.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Pumpkin</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Vishwas, Pusa Ajeet, Arjuna</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and top-dress during fruit development.</p>
+    <p><strong>DAP:</strong> Apply during sowing for better root growth.</p>
+    <p><strong>Potash:</strong> Helps improve fruit size and yield. Apply during flowering.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Bell Pepper</h3>
+  <p><strong>Quality Seeds:</strong> California Wonder, Pusa Jwala, Pusa Aghani</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 30 kg, Potash - 25 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and top dress during flowering.</p>
+    <p><strong>DAP:</strong> Apply at sowing to encourage root development.</p>
+    <p><strong>Potash:</strong> Apply during flowering to promote better fruit size and color.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Eggplant (Brinjal)</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Purple Long, Pusa Uttam, Arka Nishant</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at sowing and top-dress during flowering and fruiting.</p>
+    <p><strong>DAP:</strong> Apply during sowing for root development and early growth.</p>
+    <p><strong>Potash:</strong> Apply during fruiting to improve fruit quality and size.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Lettuce</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Subhra, Iceberg, Romaine</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 30 kg, DAP - 25 kg, Potash - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and once more during early growth.</p>
+    <p><strong>DAP:</strong> Apply at sowing for strong root development.</p>
+    <p><strong>Potash:</strong> Apply during the vegetative phase to improve leaf quality and size.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Cotton</h3>
+  <p><strong>Quality Seeds:</strong> RCH 138, DCH 32, Suvin</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 30 kg, MOP - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in 3 split doses – at sowing, 30 days after sowing, and at flowering for better vegetative growth and increased nitrogen levels.</p>
+    <p><strong>DAP:</strong> Apply as a basal dose during sowing to ensure proper phosphorus availability for root development and early growth.</p>
+    <p><strong>MOP (Muriate of Potash):</strong> Apply during the flowering and boll formation stages to improve potassium availability, enhancing the quality and quantity of cotton bolls.</p>
+  </div>
+</div>
+<div class="card">
+  <h3>Wheat</h3>
+  <p><strong>Quality Seeds:</strong> Pusa 1, PBW 550, HD 3043</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Ammonium Sulphate</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 45 kg, DAP - 35 kg, Ammonium Sulphate - 15 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in two split doses — one at sowing and another at tillering stage.</p>
+    <p><strong>DAP:</strong> Apply as a basal dose at sowing for root development and early vegetative growth.</p>
+    <p><strong>Ammonium Sulphate:</strong> Apply during the jointing stage for nitrogen supplementation and to prevent nitrogen deficiency.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Rice</h3>
+  <p><strong>Quality Seeds:</strong> PR 115, IR 64, Swarna Sub-1</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, SSP, Ammonium Sulphate</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 65 kg, SSP - 45 kg, Ammonium Sulphate - 25 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in three split doses — at transplanting, tillering, and panicle initiation.</p>
+    <p><strong>SSP:</strong> Apply during sowing to improve phosphorus availability for better root growth.</p>
+    <p><strong>Ammonium Sulphate:</strong> Apply at the tillering stage to supplement nitrogen and improve overall plant growth.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Maize</h3>
+  <p><strong>Quality Seeds:</strong> Shaktimaan, Ganga-3, DHM-121</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 120 kg, DAP - 50 kg, Potash - 40 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in two split doses — one at sowing and the second at 30 days after sowing.</p>
+    <p><strong>DAP:</strong> Basal dose at sowing for improved root growth and early vegetative development.</p>
+    <p><strong>Potash:</strong> Apply at the flowering and grain filling stages to promote ear development and better grain filling.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Barley</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Barley-1, RD 2591, DWRB 123</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 35 kg, DAP - 40 kg, MOP - 15 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in two split doses — at sowing and at tillering for healthy vegetative growth.</p>
+    <p><strong>DAP:</strong> Apply as a basal dose at sowing to enhance root growth and improve early vegetative growth.</p>
+    <p><strong>MOP:</strong> Apply at tillering to promote plant growth and improve resistance to diseases and drought.</p>
+  </div>
+</div>
+<div class="card">
+  <h3>Soybean</h3>
+  <p><strong>Quality Seeds:</strong> JS 335, JS 9305, PS 1095</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 30 kg, MOP - 15 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in two splits — during sowing and flowering stage to ensure balanced growth.</p>
+    <p><strong>DAP:</strong> Basal application during sowing to promote strong root development and early vegetative growth.</p>
+    <p><strong>MOP:</strong> Apply during flowering to improve pod development and seed filling.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Sunflower</h3>
+  <p><strong>Quality Seeds:</strong> KBSH-44, KBSH-1, Morden</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, MOP - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in two splits — one at sowing and another at 30 days after sowing to ensure steady growth.</p>
+    <p><strong>DAP:</strong> Basal application at sowing to promote root growth and early vegetative development.</p>
+    <p><strong>MOP:</strong> Apply to enhance seed filling and improve the oil content in seeds.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Groundnut (Peanut)</h3>
+  <p><strong>Quality Seeds:</strong> TMV 2, JL 24, GG 20</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 60 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at sowing and 30 days after sowing to promote healthy vegetative growth and pod formation.</p>
+    <p><strong>DAP:</strong> Basal dose at sowing for improved root and early shoot development.</p>
+    <p><strong>Potash:</strong> Apply to enhance pod development, improve yield, and ensure better quality of peanuts.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Potato</h3>
+  <p><strong>Quality Seeds:</strong> Kufri Jyoti, Kufri Badshah, Kufri Pukhraj</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 80 kg, DAP - 100 kg, MOP - 40 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in two splits — at planting and during tuber formation to encourage healthy growth.</p>
+    <p><strong>DAP:</strong> Basal application at planting for better root development and tuber initiation.</p>
+    <p><strong>MOP:</strong> Apply to promote tuber bulking and improve quality during the later stages of growth.</p>
+  </div>
+</div>
+<div class="card">
+  <h3>Tomato</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Hybrid, Kashi Vishesh, T-8</p>
+  <p><strong>Recommended Fertilizer:</strong> NPK 20:20:20, Urea, MOP</p>
+  <p><strong>Quantity per Acre:</strong> NPK 20:20:20 - 40 kg, Urea - 50 kg, MOP - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>NPK 20:20:20:</strong> Apply during transplanting to boost growth and improve fruit setting.</p>
+    <p><strong>Urea:</strong> Apply in 3 splits — at planting, flowering, and fruit setting stages for enhanced growth.</p>
+    <p><strong>MOP:</strong> Apply during the flowering stage to improve fruit quality and color.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Onion</h3>
+  <p><strong>Quality Seeds:</strong> Arka Bindu, N-2-4-1, Pusa Red</p>
+  <p><strong>Recommended Fertilizer:</strong> NPK 12:32:16, Urea, MOP</p>
+  <p><strong>Quantity per Acre:</strong> NPK 12:32:16 - 50 kg, Urea - 40 kg, MOP - 25 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>NPK 12:32:16:</strong> Apply as a basal dose during sowing to promote early growth and root establishment.</p>
+    <p><strong>Urea:</strong> Apply during vegetative growth and pre-bulbing to enhance bulb formation.</p>
+    <p><strong>MOP:</strong> Helps in improving bulb size and quality, apply during the bulbing stage.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Sugarcane</h3>
+  <p><strong>Quality Seeds:</strong> Co 86032, Co 0238, Co 0195</p>
+  <p><strong>Recommended Fertilizer:</strong> NPK 18:46:0, Urea, MOP</p>
+  <p><strong>Quantity per Acre:</strong> NPK 18:46:0 - 60 kg, Urea - 100 kg, MOP - 60 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>NPK 18:46:0:</strong> Apply during planting as a basal fertilizer to support early growth.</p>
+    <p><strong>Urea:</strong> Apply in 3 splits — during planting, tillering, and elongation stages.</p>
+    <p><strong>MOP:</strong> Apply during the elongation phase to promote better cane growth and yield.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Mango</h3>
+  <p><strong>Quality Seeds:</strong> Kesar, Langra, Raspuri</p>
+  <p><strong>Recommended Fertilizer:</strong> NPK 15:15:15, Urea, Potash</p>
+  <p><strong>Quantity per Acre:</strong> NPK 15:15:15 - 50 kg, Urea - 30 kg, Potash - 60 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>NPK 15:15:15:</strong> Apply during flowering and early fruit development stages for optimal growth.</p>
+    <p><strong>Urea:</strong> Apply during flowering and fruit development for better fruit yield and size.</p>
+    <p><strong>Potash:</strong> Apply during fruiting to enhance sugar content and improve fruit quality.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Banana</h3>
+  <p><strong>Quality Seeds:</strong> Grand Naine, Red Banana, Kachi Poovan</p>
+  <p><strong>Recommended Fertilizer:</strong> NPK 18:18:18, Urea, MOP</p>
+  <p><strong>Quantity per Acre:</strong> NPK 18:18:18 - 70 kg, Urea - 100 kg, MOP - 120 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>NPK 18:18:18:</strong> Apply as basal fertilizer during planting to enhance early growth and vigor.</p>
+    <p><strong>Urea:</strong> Apply during vegetative growth and flowering stages for improved shoot and bunch formation.</p>
+    <p><strong>MOP:</strong> Critical for fruit development, applied during the flowering and fruit-setting stages.</p>
+  </div>
+</div>
+<div class="card">
+  <h3>Apple</h3>
+  <p><strong>Quality Seeds:</strong> Red Delicious, Golden Delicious, Fuji</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 40 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during spring growth to enhance vegetative growth.</p>
+    <p><strong>DAP:</strong> Apply at planting to promote root development and early fruiting.</p>
+    <p><strong>Potash:</strong> Helps improve fruit quality and sugar content, apply during flowering.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Grapes</h3>
+  <p><strong>Quality Seeds:</strong> Thompson Seedless, Black Beauty, Keshia</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 60 kg, DAP - 50 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply in splits — during bud break and flowering.</p>
+    <p><strong>DAP:</strong> Apply at planting for root development and initial growth.</p>
+    <p><strong>Potash:</strong> Helps in improving fruit color and sugar content, apply during fruit setting and ripening.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Orange</h3>
+  <p><strong>Quality Seeds:</strong> Nagpur, Kinnow, Blood Orange</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 80 kg, DAP - 60 kg, Potash - 60 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at early vegetative growth and again during flowering.</p>
+    <p><strong>DAP:</strong> Basal application during planting.</p>
+    <p><strong>Potash:</strong> Crucial for fruit quality and sugar content, apply during fruit development.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Pomegranate</h3>
+  <p><strong>Quality Seeds:</strong> Bhagwa, Kandhari, Ganesh</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 30 kg, Potash - 40 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during early growth and fruit setting stages.</p>
+    <p><strong>DAP:</strong> Basal application for root development and early growth.</p>
+    <p><strong>Potash:</strong> Helps in enhancing fruit color and yield. Apply during flowering and fruiting.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Papaya</h3>
+  <p><strong>Quality Seeds:</strong> Red Lady, Sunrise Solo, Pusa Dwarf</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 80 kg, DAP - 40 kg, Potash - 40 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at the time of planting and during the vegetative stage.</p>
+    <p><strong>DAP:</strong> Apply as a basal dose for root development.</p>
+    <p><strong>Potash:</strong> Helps improve fruit quality. Apply during flowering and fruiting stages.</p>
+  </div>
+</div>
+<div class="card">
+  <h3>Guava</h3>
+  <p><strong>Quality Seeds:</strong> Allahabad Safeda, Red, Kesar</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 60 kg, DAP - 40 kg, Potash - 30 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at planting and in early vegetative growth.</p>
+    <p><strong>DAP:</strong> Basal application during planting for better root development.</p>
+    <p><strong>Potash:</strong> Crucial for fruit development and sugar content. Apply during fruiting stages.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Watermelon</h3>
+  <p><strong>Quality Seeds:</strong> Sugar Baby, Crimson Sweet, Royal Sweet</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 80 kg, DAP - 60 kg, Potash - 50 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and later during the fruiting stage.</p>
+    <p><strong>DAP:</strong> Apply at planting to encourage early growth and root development.</p>
+    <p><strong>Potash:</strong> Helps improve fruit size and sweetness. Apply at fruit setting and growth stages.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Cabbage</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Drumhead, Pride of India, Golden Acre</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, MOP</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 50 kg, DAP - 30 kg, MOP - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at planting and as top dressing during the vegetative phase.</p>
+    <p><strong>DAP:</strong> Apply during sowing to promote root development and early growth.</p>
+    <p><strong>MOP:</strong> Helps with head formation and quality. Apply during the growth stage.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Cauliflower</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Snowball, White Snow, Early Snowball</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 30 kg, Potash - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply at sowing and as top dressing during the vegetative growth phase.</p>
+    <p><strong>DAP:</strong> Apply as a basal dose during sowing for root development and early growth.</p>
+    <p><strong>Potash:</strong> Helps improve head formation and quality. Apply during the flowering stage.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Peas</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Pragati, Pusa Early, Matar Kesar</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 40 kg, DAP - 30 kg, Potash - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during sowing and again at the flowering stage.</p>
+    <p><strong>DAP:</strong> Basal dose during sowing for early growth.</p>
+    <p><strong>Potash:</strong> Helps in enhancing pod formation and yield. Apply during the flowering stage.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Carrot</h3>
+  <p><strong>Quality Seeds:</strong> Pusa Kesar, Nantes, Early Scarlet</p>
+  <p><strong>Recommended Fertilizer:</strong> Urea, DAP, Potash</p>
+  <p><strong>Quantity per Acre:</strong> Urea - 30 kg, DAP - 40 kg, Potash - 20 kg</p>
+  <button class="details-btn" onclick="toggleDetails(this)">Usage Instructions</button>
+  <div class="details">
+    <p><strong>Urea:</strong> Apply during planting and at the vegetative growth stage.</p>
+    <p><strong>DAP:</strong> Apply as a basal dose during sowing for better root development.</p>
+    <p><strong>Potash:</strong> Helps improve root size and quality. Apply during root development.</p>
+  </div>
+</div>
+
+<div id="customerPanel">
+  <h2>Fertilizer and Seed Order</h2>
+
+  <div class="form-container">
+    <h3>Select Your Fertilizer/Seed</h3>
+
+    <!-- Seed Dropdown -->
+    <div class="form-group">
+      <label for="itemSelect">Select Seed (Optional):</label>
+      <select id="itemSelect">
+        <option value="">Select Seed</option>
+        <option value="Wheat Seed">Wheat Seed</option>
+        <option value="Rice Seed">Rice Seed</option>
+        <option value="Cotton Seed">Cotton Seed</option>
+        <option value="Tomato Seed">Tomato Seed</option>
+      </select>
+    </div>
+
+    <!-- Seed Quantity Input -->
+    <div class="form-group">
+      <label for="seedQuantity">Enter Quantity (kg):</label>
+      <input type="number" id="seedQuantity" min="1" placeholder="Enter seed quantity">
+    </div>
+
+    <!-- Fertilizer Dropdown (Initially Empty) -->
+    <div class="form-group">
+      <label for="fertilizerSelect">Select Fertilizer (Optional):</label>
+      <select id="fertilizerSelect" disabled>
+        <option value="">Select Fertilizer</option>
+      </select>
+    </div>
+
+    <!-- Fertilizer Quantity Input -->
+    <div class="form-group">
+      <label for="fertilizerQuantity">Enter Quantity (kg):</label>
+      <input type="number" id="fertilizerQuantity" min="1" placeholder="Enter fertilizer quantity">
+    </div>
+
+    <button onclick="submitForm()">Submit</button>
+  </div>
+
+  <div class="order-summary" id="orderSummary">
+    <h3>Order Summary</h3>
+    <p><strong>Seed:</strong> No seed selected</p>
+    <p><strong>Seed Quantity:</strong> 0 kg</p>
+    <p><strong>Fertilizer:</strong> No fertilizer selected</p>
+    <p><strong>Fertilizer Quantity:</strong> 0 kg</p>
+  </div>
+</div>
+<footer>
+  <div class="footer-container">
+    <div class="footer-content">
+      <h3>KisanSanjivni</h3>
+      <p>Empowering Farmers with Smart Agriculture Solutions & Digital Services.</p>
+
+      <div class="contact-via-social">
+        <a href="https://wa.me/your_number" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://twitter.com/your_profile" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/your_profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://linkedin.com/in/your_profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com/your_profile" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <p class="footer-credit">© 2025 KisanSanjivni | Designed by Sohit Kumar Sharma</p>
+    </div>
+  </div>
+</footer>
+<script src="langData.js"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+  function toggleDetails(btn) {
+    const details = btn.nextElementSibling;
+    details.style.display = details.style.display === "block" ? "none" : "block";
+  }
+
+  function filterCrops() {
+    const input = document.getElementById('searchBar').value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(input) ? 'block' : 'none';
+    });
+  }
+   // Adding an event listener to the button to open the login form
+   document.getElementById("cart_button").addEventListener("click", function() {
+            // Show the login form when the button is clicked
+            document.getElementById("customerPanel").style.display = "block";
+        });
+</script>
+
+</body>
+</html>

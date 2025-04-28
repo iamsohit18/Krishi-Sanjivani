@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cold Storage & Warehousing</title>
+  <link rel="stylesheet" href="coldStorageAndWarehouseing.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="langData.css">
+</head>
+<body>
+  <header>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+
+      <div class="First">
+        <img src="KisanSanjivni.jpg" alt="KisanSanjivni">
+        <pre class="info-text">"One Platform — Multiple Services for Farmers"
+"Empowering Rural India through Digital Agriculture Innovation"
+"Bridging the Gap between Farmers and Technology"
+"Modern Farming Needs Modern Solutions — That’s Krishi Sanjivni"
+        </pre>
+      </div>
+
+      <div class="top-nav-mid" id="tagline">
+        <h2 id="heading1">Cold Storage & Warehousing Details</h2>
+  <div class="search-container">
+    <input type="text" id="cropSearch" placeholder="Search by Crop">
+    <input type="text" id="citySearch" placeholder="Search by City">
+  </div>
+        </div>
+      <div class="top-nav-right">
+        <div class="contact" id="contactText">
+          📞 Call us: 1800 222 3331
+        </div>
+        <div class="language"id="google_translate_element"> </div>
+<div class="buttons">
+<button class="btn_register">Register</button>
+<button class="btn_login">Login</button></div></div> </div>
+</header>
+  <table id="storageTable">
+    <thead>
+      <tr>
+        <th>City</th>
+        <th>Crop</th>
+        <th>Cold Storage Name</th>
+        <th>Capacity (MT)</th>
+        <th>Contact</th>
+        <th>Services Offered</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Noida</td>
+        <td>Tomato</td>
+        <td>Noida Agro Cold Chain</td>
+        <td>8500</td>
+        <td>+91-9812345678</td>
+        <td>Refrigerated Storage, Packaging</td>
+        <td><button class="book-btn" onclick="openModal('Noida Agro Cold Chain', 'Noida')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Bulandshahr</td>
+        <td>Onion</td>
+        <td>Vishal Warehousing</td>
+        <td>7500</td>
+        <td>+91-9988776655</td>
+        <td>Humidity Control, Fumigation</td>
+        <td><button class="book-btn" onclick="openModal('Vishal Warehousing', 'Bulandshahr')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Khurja</td>
+        <td>Garlic</td>
+        <td>Khurja Agro Store Pvt Ltd</td>
+        <td>7200</td>
+        <td>+91-9876543301</td>
+        <td>Temperature Control, Long-Term Storage</td>
+        <td><button class="book-btn" onclick="openModal('Khurja Agro Store Pvt Ltd', 'Khurja')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Aligarh</td>
+        <td>Wheat</td>
+        <td>Aligarh Safe Grains</td>
+        <td>9200</td>
+        <td>+91-9123459876</td>
+        <td>Fumigation, Dry Storage</td>
+        <td><button class="book-btn" onclick="openModal('Aligarh Safe Grains', 'Aligarh')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Hapur</td>
+        <td>Green Chilli</td>
+        <td>GreenBox Cold Facility</td>
+        <td>7800</td>
+        <td>+91-9111223344</td>
+        <td>Cold Storage, Sorting</td>
+        <td><button class="book-btn" onclick="openModal('GreenBox Cold Facility', 'Hapur')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Meerut</td>
+        <td>Mango</td>
+        <td>FreshHarvest Pvt Ltd</td>
+        <td>8700</td>
+        <td>+91-9876512340</td>
+        <td>Ripening Chamber, Controlled Temp</td>
+        <td><button class="book-btn" onclick="openModal('FreshHarvest Pvt Ltd', 'Meerut')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Mathura</td>
+        <td>Rice</td>
+        <td>Shree Krishi Storage</td>
+        <td>9700</td>
+        <td>+91-9365478901</td>
+        <td>Dry Warehousing, Long-Term Storage</td>
+        <td><button class="book-btn" onclick="openModal('Shree Krishi Storage', 'Mathura')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Agra</td>
+        <td>Banana</td>
+        <td>Agra CoolChain Systems</td>
+        <td>6200</td>
+        <td>+91-9345678123</td>
+        <td>Banana Ripening, Pack & Ship</td>
+        <td><button class="book-btn" onclick="openModal('Agra CoolChain Systems', 'Agra')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Ghaziabad</td>
+        <td>Maize</td>
+        <td>Kisaan Agro Cold Store</td>
+        <td>7900</td>
+        <td>+91-9876543123</td>
+        <td>Humidity Controlled, Dry Area</td>
+        <td><button class="book-btn" onclick="openModal('Kisaan Agro Cold Store', 'Ghaziabad')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Greater Noida</td>
+        <td>Carrot</td>
+        <td>FreshGrow Cold Storage</td>
+        <td>8800</td>
+        <td>+91-9988991122</td>
+        <td>Cold Chain, Moisture Control</td>
+        <td><button class="book-btn" onclick="openModal('FreshGrow Cold Storage', 'Greater Noida')">Book Storage</button></td>
+      </tr>
+      
+      <tr>
+        <td>Meerut</td>
+        <td>Potato</td>
+        <td>Shivam Cold Storage</td>
+        <td>10000</td>
+        <td>+91-9876543210</td>
+        <td>Cold Storage, Temp Control</td>
+        <td><button class="book-btn" onclick="openModal('Shivam Cold Storage', 'Meerut')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Bulandshahr</td>
+        <td>Wheat</td>
+        <td>Brahma Warehouse Pvt Ltd</td>
+        <td>8500</td>
+        <td>+91-9123456780</td>
+        <td>Preservation, Fumigation</td>
+        <td><button class="book-btn" onclick="openModal('Brahma Warehouse Pvt Ltd', 'Bulandshahr')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Hapur</td>
+        <td>Potato</td>
+        <td>Agro Cold Storage Ltd.</td>
+        <td>9200</td>
+        <td>+91-9876541111</td>
+        <td>Cold Storage, Controlled Atmosphere</td>
+        <td><button class="book-btn" onclick="openModal('Agro Cold Storage Ltd.', 'Hapur')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Aligarh</td>
+        <td>Onion</td>
+        <td>Raj Agro Warehousing</td>
+        <td>7000</td>
+        <td>+91-9765432222</td>
+        <td>Preservation, Sorting</td>
+        <td><button class="book-btn" onclick="openModal('Raj Agro Warehousing', 'Aligarh')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Noida</td>
+        <td>Fruits</td>
+        <td>FreshZone Cold Storage</td>
+        <td>6000</td>
+        <td>+91-9898981111</td>
+        <td>Cold Storage, Ripening Chambers</td>
+        <td><button class="book-btn" onclick="openModal('FreshZone Cold Storage', 'Noida')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Meerut</td>
+        <td>Tomato</td>
+        <td>Sarvoday Agro Storage</td>
+        <td>8200</td>
+        <td>+91-9834567890</td>
+        <td>Cold Storage, Transport</td>
+        <td><button class="book-btn" onclick="openModal('Sarvoday Agro Storage', 'Meerut')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Khurja</td>
+        <td>Cauliflower</td>
+        <td>Bhartiya Krishi Storage</td>
+        <td>4000</td>
+        <td>+91-9911223344</td>
+        <td>Cooling, Short-Term Storage</td>
+        <td><button class="book-btn" onclick="openModal('Bhartiya Krishi Storage', 'Khurja')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Mathura</td>
+        <td>Apple</td>
+        <td>FruitMax Cold Warehousing</td>
+        <td>5100</td>
+        <td>+91-9876501234</td>
+        <td>Cold Storage, Ripening, Logistics</td>
+        <td><button class="book-btn" onclick="openModal('FruitMax Cold Warehousing', 'Mathura')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Ghaziabad</td>
+        <td>Rice</td>
+        <td>Kisan Sewa Storage</td>
+        <td>9500</td>
+        <td>+91-8822334455</td>
+        <td>Warehousing, Fumigation</td>
+        <td><button class="book-btn" onclick="openModal('Kisan Sewa Storage', 'Ghaziabad')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Agra</td>
+        <td>Banana</td>
+        <td>Agro Cool Pvt Ltd</td>
+        <td>7800</td>
+        <td>+91-9090909090</td>
+        <td>Banana Ripening, Storage</td>
+        <td><button class="book-btn" onclick="openModal('Agro Cool Pvt Ltd', 'Agra')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Lucknow</td>
+        <td>Wheat</td>
+        <td>UP Grain Warehouse</td>
+        <td>11000</td>
+        <td>+91-9300000000</td>
+        <td>Preservation, Temperature Control</td>
+        <td><button class="book-btn" onclick="openModal('UP Grain Warehouse', 'Lucknow')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Firozabad</td>
+        <td>Potato</td>
+        <td>Choudhary Cold Hub</td>
+        <td>6200</td>
+        <td>+91-9456789123</td>
+        <td>Fumigation, Cooling</td>
+        <td><button class="book-btn" onclick="openModal('Choudhary Cold Hub', 'Firozabad')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Etah</td>
+        <td>Onion</td>
+        <td>GreenTech Storage</td>
+        <td>4700</td>
+        <td>+91-9234567891</td>
+        <td>Warehousing, Humidity Control</td>
+        <td><button class="book-btn" onclick="openModal('GreenTech Storage', 'Etah')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Barabanki</td>
+        <td>Tomato</td>
+        <td>FreshHarvest Cold Chain</td>
+        <td>6800</td>
+        <td>+91-9876543321</td>
+        <td>Sorting, Temperature Control</td>
+        <td><button class="book-btn" onclick="openModal('FreshHarvest Cold Chain', 'Barabanki')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Kanpur</td>
+        <td>Cauliflower</td>
+        <td>Sunrise Agro Facility</td>
+        <td>8000</td>
+        <td>+91-9812345678</td>
+        <td>Cooling, Controlled Air</td>
+        <td><button class="book-btn" onclick="openModal('Sunrise Agro Facility', 'Kanpur')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Saharanpur</td>
+        <td>Wheat</td>
+        <td>Jai Ram Cold Stores</td>
+        <td>9000</td>
+        <td>+91-9988776655</td>
+        <td>Fumigation, Bulk Storage</td>
+        <td><button class="book-btn" onclick="openModal('Jai Ram Cold Stores', 'Saharanpur')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Muzaffarnagar</td>
+        <td>Maize</td>
+        <td>MaizeCare Warehousing</td>
+        <td>5600</td>
+        <td>+91-9123456789</td>
+        <td>Bulk Storage, Grain Safety</td>
+        <td><button class="book-btn" onclick="openModal('MaizeCare Warehousing', 'Muzaffarnagar')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Bareilly</td>
+        <td>Potato</td>
+        <td>SafeStore Cold Solutions</td>
+        <td>8800</td>
+        <td>+91-9365478123</td>
+        <td>Temp Control, High Stack</td>
+        <td><button class="book-btn" onclick="openModal('SafeStore Cold Solutions', 'Bareilly')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Moradabad</td>
+        <td>Garlic</td>
+        <td>Moradabad Cool & Store</td>
+        <td>5300</td>
+        <td>+91-9786543212</td>
+        <td>Cooling, Long-Term Storage</td>
+        <td><button class="book-btn" onclick="openModal('Moradabad Cool & Store', 'Moradabad')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Rampur</td>
+        <td>Onion</td>
+        <td>Rampur Agro Cold Pvt Ltd</td>
+        <td>4900</td>
+        <td>+91-9265432178</td>
+        <td>Humidity Control, Sorting</td>
+        <td><button class="book-btn" onclick="openModal('Rampur Agro Cold Pvt Ltd', 'Rampur')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Amroha</td>
+        <td>Green Peas</td>
+        <td>AgriCool Amroha</td>
+        <td>4100</td>
+        <td>+91-9354678910</td>
+        <td>Cold Chain, Transit Facility</td>
+        <td><button class="book-btn" onclick="openModal('AgriCool Amroha', 'Amroha')">Book Storage</button></td>
+      </tr>
+      <tr>
+        <td>Budaun</td>
+        <td>Mango</td>
+        <td>FreshFruit Storage Ltd.</td>
+        <td>5200</td>
+        <td>+91-9212348765</td>
+        <td>Ripening, Mango-Specific Cold Chain</td>
+        <td><button class="book-btn" onclick="openModal('FreshFruit Storage Ltd.', 'Budaun')">Book Storage</button></td>
+      </tr>
+      
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <h3>KisanSanjivni</h3>
+        <p>Empowering Farmers with Smart Agriculture Solutions & Digital Services.</p>
+  
+        <div class="contact-via-social">
+          <a href="https://wa.me/your_number" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://twitter.com/your_profile" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://facebook.com/your_profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://linkedin.com/in/your_profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://instagram.com/your_profile" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+  
+        <p class="footer-credit">© 2025 KisanSanjivni | Designed by Sohit Kumar Sharma</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3>Book Storage</h3>
+      <p id="modalLocation"></p>
+      <input type="text" id="farmerName" placeholder="Your Name">
+      <input type="text" id="cropType" placeholder="Crop Type">
+      <input type="number" id="quantity" placeholder="Quantity in MT">
+      <button onclick="submitBooking()">Confirm Booking</button>
+    </div>
+  </div>
+  <script src="coldStorageAndWarehouse.js"></script>
+<script src="langData.js"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
